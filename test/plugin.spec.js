@@ -10,7 +10,7 @@ var foo = ${styles};`;
 
 describe('plugin', () => {
   it('should correctly prefix supported style keys', () => {
-    const code = 'const foo = { transform: \'scale(1)\' };';
+    const code = `const foo = { transform: 'scale(1)' };`;
     const compiled = transform(code, { plugins: [plugin] });
 
     expect(compiled.code).toBe(compareToSource(
@@ -19,7 +19,7 @@ describe('plugin', () => {
   });
 
   it('should correctly prefix supported style values', () => {
-    const code = 'const foo = { display: \'flex\' };';
+    const code = `const foo = { display: 'flex' };`;
     const compiled = transform(code, { plugins: [plugin] });
 
     expect(compiled.code).toBe(compareToSource(
@@ -28,7 +28,7 @@ describe('plugin', () => {
   });
 
   it('should not prefix non-css properties', () => {
-    const code = 'const foo = { foo: \'bar\' };';
+    const code = `const foo = { 'foo': 'bar' };`;
     const compiled = transform(code, { plugins: [plugin] });
 
     expect(compiled.code).toBe(compareToSource(
