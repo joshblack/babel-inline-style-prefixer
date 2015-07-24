@@ -11,7 +11,7 @@ const properties = new Set([
   'order',
   'justifyContent',
   'transform',
-  'flex'
+  'display'
 ]);
 
 export default function prefixable(property) {
