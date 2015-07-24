@@ -1,4 +1,4 @@
-const prefixable = new Set([
+const properties = new Set([
   'userSelect',
   'transition',
   'boxShadow',
@@ -13,3 +13,7 @@ const prefixable = new Set([
   'transform',
   'flex'
 ]);
+
+export default function prefixable(property) {
+  return properties.has(property);
+}
