@@ -1,0 +1,40 @@
+{
+  "name": "babel-inline-style-prefixer",
+  "version": "0.0.1",
+  "description": "Babel plugin for prefixing inline styles that may start to become popular in React applications someday.",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "build": "babel src --out-dir lib",
+    "build:umd": "webpack src/index.js dist/babel-inline-style-prefixer.js && NODE_ENV=production webpack src/index.js dist/babel-inline-style-prefixer.min.js",
+    "lint": "eslint src test",
+    "test": "NODE_ENV=test mocha --compilers js:babel/register --recursive",
+    "test:watch": "NODE_ENV=test mocha --compilers js:babel/register --recursive --watch",
+    "test:cov": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive",
+    "prepublish": "npm run lint && npm run test && npm run clean && npm run build && npm run build:umd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshblack/babel-inline-style-prefixer.git"
+  },
+  "author": "Josh Black <joshblack@us.ibm.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshblack/babel-inline-style-prefixer/issues"
+  },
+  "homepage": "https://github.com/joshblack/babel-inline-style-prefixer",
+  "devDependencies": {
+    "babel": "^5.5.8",
+    "babel-core": "^5.6.18",
+    "babel-eslint": "^3.1.15",
+    "babel-loader": "^5.1.4",
+    "eslint": "^0.23",
+    "eslint-config-airbnb": "0.0.6",
+    "eslint-plugin-react": "^2.3.0",
+    "expect": "^1.6.0",
+    "isparta": "^3.0.3",
+    "mocha": "^2.2.5",
+    "rimraf": "^2.4.2",
+    "webpack": "^1.9.6"
+  }
+}
