@@ -6,7 +6,7 @@ describe('#prefixable', () => {
     expect(prefixable('flex')).toBe(true);
   });
 
-  it('should say if a property shout not be prefixed', () => {
+  it('should say if a property should not be prefixed', () => {
     expect(prefixable('foo')).toBe(false);
   });
 });
